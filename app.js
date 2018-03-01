@@ -25,7 +25,10 @@ var bot = new builder.UniversalBot(connector)
 
 
 // Establish the LUIS connection through the API which is hiden
-var recognizer = new builder.LuisRecognizer(process.env.LUIS_MODEL_URL);
+// var LuisModelUrl = "./biogen-helper-bot.json"
+// // set your LUIS url with LuisActionBinding models (see samples/LuisActionBinding/LUIS_MODEL.json)
+// var luisRecognizer = new builder.LuisRecognizer(LuisModelUrl);
+// var luisRecognizer = new builder.LuisRecognizer(process.env.LUIS_MODEL_URL);
 
 
 // Make the recognizer For the QnA service to be used.
@@ -36,12 +39,14 @@ var qnaRecognizer = new cog.QnAMakerRecognizer({
 
 
 
-var intentsDialog = new builder.IntentDialog({ recognizers: [recognizer, qnaRecognizer] });
+var intentsDialog = new builder.IntentDialog({ recognizers: [qnaRecognizer] });
 bot.dialog("/", intentsDialog)
 
 
 intentsDialog.matches("qna", (session, args, next) => {
+    console.log("INSIDE THE QNA")
     var answerEntity = builder.EntityRecognizer.findEntity(args.entities, "answer");
+    console.log(answerEntity);
     session.send(answerEntity.entity);
 
 })
