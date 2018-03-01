@@ -39,7 +39,7 @@ var qnaRecognizer = new cog.QnAMakerRecognizer({
 
 
 
-var intentsDialog = new builder.IntentDialog({ recognizers: [qnaRecognizer, luisRecognizer] });
+var intentsDialog = new builder.IntentDialog({ recognizers: [qnaRecognizer] });
 bot.dialog("/", intentsDialog)
 
 
@@ -50,8 +50,8 @@ intentsDialog.matches("qna", (session, args, next) => {
     session.send(answerEntity.entity);
 })
 
-intentsDialog.matches("SharedMailbox", (session,args,next) =>{
-  session.send("Within the LUIS Shared Mailbox")
+intentsDialog.matches("CreateTicket", (session,args,next) =>{
+  session.send("Within the LUIS Create Ticket")
 } )
 
 
