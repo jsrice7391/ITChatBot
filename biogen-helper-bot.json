@@ -1,0 +1,4291 @@
+{
+  "luis_schema_version": "2.1.0",
+  "versionId": "0.1",
+  "name": "biogen-helper-bot",
+  "desc": "This is a trial for a LUIS bot",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "Calendar"
+    },
+    {
+      "name": "Common"
+    },
+    {
+      "name": "CreateTicket"
+    },
+    {
+      "name": "DistributionList"
+    },
+    {
+      "name": "Greeting"
+    },
+    {
+      "name": "Groups"
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "OneDrive"
+    },
+    {
+      "name": "Outlook"
+    },
+    {
+      "name": "SharedMailbox"
+    },
+    {
+      "name": "VideoStreams"
+    }
+  ],
+  "entities": [
+    {
+      "name": "Calendar.Location",
+      "inherits": {
+        "domain_name": "Calendar",
+        "model_name": "Location"
+      }
+    },
+    {
+      "name": "Calendar.Subject",
+      "inherits": {
+        "domain_name": "Calendar",
+        "model_name": "Subject"
+      }
+    },
+    {
+      "name": "Events.PlaceType",
+      "inherits": {
+        "domain_name": "Events",
+        "model_name": "PlaceType"
+      }
+    },
+    {
+      "name": "ExchangeKeywords"
+    }
+  ],
+  "composites": [],
+  "closedLists": [],
+  "bing_entities": [
+    "datetimeV2"
+  ],
+  "model_features": [],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "'",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "\" can you read me my last text , please ? \"",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": ",",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "1",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "1 drive",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 0,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "1drive",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 0,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "897 pancake house on tuesday 1 : 00 pm please",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Calendar.Location",
+          "startPos": 0,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "a",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "add a description to my video",
+      "intent": "VideoStreams",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 24,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "add a new task finish assignment",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Calendar.Subject",
+          "startPos": 15,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "add an event to read about adam lambert news",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Calendar.Subject",
+          "startPos": 16,
+          "endPos": 43
+        }
+      ]
+    },
+    {
+      "text": "add an event to visit 209 nashville gym",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Calendar.Location",
+          "startPos": 22,
+          "endPos": 38
+        }
+      ]
+    },
+    {
+      "text": "add dinner with mary at fuji's for 7pm tonight",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Calendar.Subject",
+          "startPos": 4,
+          "endPos": 19
+        },
+        {
+          "entity": "Calendar.Location",
+          "startPos": 24,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "add imax theater to my upcoming events",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Calendar.Subject",
+          "startPos": 4,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "add movie with george to my calendar for next tuesday",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Calendar.Subject",
+          "startPos": 4,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "add shares mail",
+      "intent": "SharedMailbox",
+      "entities": []
+    },
+    {
+      "text": "add to monday's calendar visiting waltham",
+      "intent": "Calendar",
+      "entities": []
+    },
+    {
+      "text": "add to my calender daddy daughter dance at meadowbrook",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Calendar.Location",
+          "startPos": 43,
+          "endPos": 53
+        }
+      ]
+    },
+    {
+      "text": "add to tuesday ' s calender visting milos bar tequila",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Calendar.Location",
+          "startPos": 36,
+          "endPos": 52
+        }
+      ]
+    },
+    {
+      "text": "add user to shared mailbox",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 12,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "add users to smb",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 13,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "address book not syncing",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 0,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "afternoon",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "am i free to be with friends saturday ?",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Calendar.Subject",
+          "startPos": 13,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "am i you?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "appointment with johnson needs to be next week",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Calendar.Subject",
+          "startPos": 0,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "are groups public or private?",
+      "intent": "Groups",
+      "entities": []
+    },
+    {
+      "text": "are we going to lunch",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "are you",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "are you me?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "attachments",
+      "intent": "Outlook",
+      "entities": []
+    },
+    {
+      "text": "bad",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "book some catering",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "book some catering from panera for february 12th",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Calendar.Location",
+          "startPos": 24,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "bounceback message",
+      "intent": "Outlook",
+      "entities": []
+    },
+    {
+      "text": "bow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "calendar i ' ll be at the garage from 8 till 3 this saturday",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Calendar.Location",
+          "startPos": 26,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "call dad mike",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Calendar.Subject",
+          "startPos": 0,
+          "endPos": 12
+        }
+      ]
+    },
+    {
+      "text": "can a smb be owned by more than 1 person?",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 6,
+          "endPos": 8
+        }
+      ]
+    },
+    {
+      "text": "can i add a member to a group",
+      "intent": "Groups",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 24,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "can i add another owner to my group?",
+      "intent": "Groups",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 30,
+          "endPos": 34
+        }
+      ]
+    },
+    {
+      "text": "can i attach a folder to an email",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 28,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "can i block a sender?",
+      "intent": "Outlook",
+      "entities": []
+    },
+    {
+      "text": "can i change the color of the mail windows?",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 30,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "can i change the quality of videos",
+      "intent": "VideoStreams",
+      "entities": []
+    },
+    {
+      "text": "can i combine or link accounts to view all of my mail from multiple accounts in one place?",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 49,
+          "endPos": 52
+        }
+      ]
+    },
+    {
+      "text": "can i delete a group?",
+      "intent": "Groups",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 15,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "can i delete a ticket?",
+      "intent": "CreateTicket",
+      "entities": []
+    },
+    {
+      "text": "can i delete comments?",
+      "intent": "VideoStreams",
+      "entities": []
+    },
+    {
+      "text": "can i delete stuff on one drive",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 22,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "can i download a video?",
+      "intent": "VideoStreams",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 17,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "can i get access on one drive",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 20,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "can i get access to 1 driver",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 20,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "can i give access to an smb to someone else outside of the company?",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 24,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "can i have access to 1 drive",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 21,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "can i join more than 1 group?",
+      "intent": "Groups",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 23,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "can i remove someone as an owner from a dl?",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 40,
+          "endPos": 41
+        }
+      ]
+    },
+    {
+      "text": "can i set permissions on a channel?",
+      "intent": "VideoStreams",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 10,
+          "endPos": 20
+        },
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 27,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "can i set permissions on a group?",
+      "intent": "VideoStreams",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 10,
+          "endPos": 20
+        },
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 27,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "can i share a video to anyone?",
+      "intent": "VideoStreams",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 14,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "can i share my distrib list?",
+      "intent": "DistributionList",
+      "entities": []
+    },
+    {
+      "text": "can i share my distribution list?",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 15,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "can i share my stream with someone outside of the organizaiton?",
+      "intent": "VideoStreams",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 15,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "can i upload any video file?",
+      "intent": "VideoStreams",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 17,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "can i upload my own thumbnail",
+      "intent": "VideoStreams",
+      "entities": []
+    },
+    {
+      "text": "can you find a cozier restaurant in my location ?",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Events.PlaceType",
+          "startPos": 22,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "can you make me a sandwich",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you read me the last email that came into the live downtown miami account august eleven",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 25,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "can you read my email from berry chris",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 16,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "cant access smb",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 12,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "cant send messages",
+      "intent": "Outlook",
+      "entities": []
+    },
+    {
+      "text": "change owner of smb",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 16,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "change ownership of dl",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 20,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "change the meeting with chris to 9 : 00 am",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Calendar.Subject",
+          "startPos": 7,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "check for me the nearest romantic cafe",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Events.PlaceType",
+          "startPos": 34,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "closed captioning not showing up",
+      "intent": "VideoStreams",
+      "entities": []
+    },
+    {
+      "text": "cow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "creat a tickt",
+      "intent": "CreateTicket",
+      "entities": []
+    },
+    {
+      "text": "create a channel?",
+      "intent": "VideoStreams",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 9,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "create a level 1 ticket now",
+      "intent": "CreateTicket",
+      "entities": []
+    },
+    {
+      "text": "create a smb ticket",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 9,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "create a taco",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "create a ticket",
+      "intent": "CreateTicket",
+      "entities": []
+    },
+    {
+      "text": "create a ticket pls",
+      "intent": "CreateTicket",
+      "entities": []
+    },
+    {
+      "text": "create an it ticket",
+      "intent": "CreateTicket",
+      "entities": []
+    },
+    {
+      "text": "create sandwiches",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "create ticket",
+      "intent": "CreateTicket",
+      "entities": []
+    },
+    {
+      "text": "create ticket for me",
+      "intent": "CreateTicket",
+      "entities": []
+    },
+    {
+      "text": "crete is a ticket pls",
+      "intent": "CreateTicket",
+      "entities": []
+    },
+    {
+      "text": "crete ticket",
+      "intent": "CreateTicket",
+      "entities": []
+    },
+    {
+      "text": "cuff",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "da",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "delete a channel?",
+      "intent": "VideoStreams",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 9,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "delete a video?",
+      "intent": "VideoStreams",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 9,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "delete helen fred ' s birthday",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Calendar.Subject",
+          "startPos": 7,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "delete stuff on onedrive",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 16,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "delete ticket",
+      "intent": "CreateTicket",
+      "entities": []
+    },
+    {
+      "text": "deleting a group",
+      "intent": "Groups",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 11,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "disable people",
+      "intent": "VideoStreams",
+      "entities": []
+    },
+    {
+      "text": "disable the transcript",
+      "intent": "VideoStreams",
+      "entities": []
+    },
+    {
+      "text": "distribution list create",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 0,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "do",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "do i need a group?",
+      "intent": "Groups",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 12,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "do i need a personal distribution list",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 12,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "do i need a shared mailbox?",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 12,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "do the mail provide screen reader support?",
+      "intent": "Outlook",
+      "entities": []
+    },
+    {
+      "text": "does stream support audio file?",
+      "intent": "VideoStreams",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 5,
+          "endPos": 10
+        }
+      ]
+    },
+    {
+      "text": "does video support audio files?",
+      "intent": "VideoStreams",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 5,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "download stuff one drive",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 15,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "drive to the store",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "dsw shoes 7804 on monday 3 : 00 pm",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Calendar.Location",
+          "startPos": 0,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "dunmore pa sonic sounds friday morning please",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Calendar.Location",
+          "startPos": 0,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "edit a video?",
+      "intent": "VideoStreams",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 7,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "edit an uploaded video?",
+      "intent": "VideoStreams",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 17,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "edit owner for smb",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 15,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "email cloney john",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 0,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "email not working",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 0,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "evening",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "extend lunch meeting 30 minutes extra",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Calendar.Subject",
+          "startPos": 7,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "find a korean bbq place for tomorrow evening",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Events.PlaceType",
+          "startPos": 7,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "fo",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "follow channels",
+      "intent": "VideoStreams",
+      "entities": []
+    },
+    {
+      "text": "forward email",
+      "intent": "Outlook",
+      "entities": []
+    },
+    {
+      "text": "getting an email bounceback",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 11,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "good",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "good afternoon",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "good afternoon how do i make an email rule",
+      "intent": "Outlook",
+      "entities": []
+    },
+    {
+      "text": "good cucumber",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "good evening",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "good more",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "good morning",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "good nothing",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "greetings",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hallo",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hello",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hello can you create a distribution list please",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 23,
+          "endPos": 39
+        }
+      ]
+    },
+    {
+      "text": "hello i'm",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hello, my name is",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "help me in finding a romantic restaurant by the sea shore",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Events.PlaceType",
+          "startPos": 30,
+          "endPos": 39
+        }
+      ]
+    },
+    {
+      "text": "hey",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hey man",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hi",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hi how do i upload a video",
+      "intent": "VideoStreams",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 21,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "hi mom when does the mail come in",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "hiya",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hiya how are you doing",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "ho",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hoff",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "hola",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "how",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how are u",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "how are you",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "how are you doing bot",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "how can i change my signature?",
+      "intent": "Outlook",
+      "entities": []
+    },
+    {
+      "text": "how can i disable comments on a video?",
+      "intent": "VideoStreams",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 32,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "how can i disable comments?",
+      "intent": "VideoStreams",
+      "entities": []
+    },
+    {
+      "text": "how can i see my meetings",
+      "intent": "Calendar",
+      "entities": []
+    },
+    {
+      "text": "how do i accept a meeting",
+      "intent": "Outlook",
+      "entities": []
+    },
+    {
+      "text": "how do i access a smb?",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 18,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "how do i access one drive?",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 16,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "how do i access webmail",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 16,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "how do i add a member for a shared mailbox?",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 28,
+          "endPos": 41
+        }
+      ]
+    },
+    {
+      "text": "how do i add a member to a distribution list?",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 27,
+          "endPos": 43
+        }
+      ]
+    },
+    {
+      "text": "how do i add my email to my phone or tablet?",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 16,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "how do i add or remove folders?",
+      "intent": "Outlook",
+      "entities": []
+    },
+    {
+      "text": "how do i add people to my groups?",
+      "intent": "Groups",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 26,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "how do i attach something",
+      "intent": "Outlook",
+      "entities": []
+    },
+    {
+      "text": "how do i become a delegate",
+      "intent": "Outlook",
+      "entities": []
+    },
+    {
+      "text": "how do i change a thumbnail",
+      "intent": "VideoStreams",
+      "entities": []
+    },
+    {
+      "text": "how do i change ownership of a dl",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 31,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "how do i change the owners on a shared mailbox?",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 32,
+          "endPos": 45
+        }
+      ]
+    },
+    {
+      "text": "how do i change the size or format of the text?",
+      "intent": "Outlook",
+      "entities": []
+    },
+    {
+      "text": "how do i check a rooms availability",
+      "intent": "Outlook",
+      "entities": []
+    },
+    {
+      "text": "how do i check how much storage i have and how much i’m using?",
+      "intent": "OneDrive",
+      "entities": []
+    },
+    {
+      "text": "how do i check my calenda",
+      "intent": "Calendar",
+      "entities": []
+    },
+    {
+      "text": "how do i convert a group from private to public or vice versa?",
+      "intent": "Groups",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 19,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "how do i create a channel?",
+      "intent": "VideoStreams",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 18,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "how do i create a group?",
+      "intent": "Groups",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 18,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "how do i create a onedrive group?",
+      "intent": "Groups",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 18,
+          "endPos": 25
+        },
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 27,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "how do i create a personal distribution list?",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 18,
+          "endPos": 43
+        }
+      ]
+    },
+    {
+      "text": "how do i create a ticket",
+      "intent": "CreateTicket",
+      "entities": []
+    },
+    {
+      "text": "how do i decline a meeting",
+      "intent": "Outlook",
+      "entities": []
+    },
+    {
+      "text": "how do i delete a distribution lists",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 18,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "how do i delete a group?",
+      "intent": "Groups",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 18,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "how do i delete a video on streams?",
+      "intent": "VideoStreams",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 18,
+          "endPos": 22
+        },
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 27,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "how do i delete my group?",
+      "intent": "Groups",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 19,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "how do i delete my personal dl",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 19,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "how do i delete, mark as read, or move all of my mail at once?",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 49,
+          "endPos": 52
+        }
+      ]
+    },
+    {
+      "text": "how do i do this",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how do i download a file from onedrive?",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 30,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "how do i download a video?",
+      "intent": "VideoStreams",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 20,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "how do i download stuff from one drive",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 29,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "how do i download the onedrive mobile app?",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 22,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "how do i get a personal dl?",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 15,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "how do i get access to my outlook",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 26,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "how do i get access to one drive",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 23,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "how do i get an embed link",
+      "intent": "VideoStreams",
+      "entities": []
+    },
+    {
+      "text": "how do i get calendar on my android?",
+      "intent": "Calendar",
+      "entities": []
+    },
+    {
+      "text": "how do i get calendar on my galaxy phone?",
+      "intent": "Calendar",
+      "entities": []
+    },
+    {
+      "text": "how do i get calendar on my iphone?",
+      "intent": "Calendar",
+      "entities": []
+    },
+    {
+      "text": "how do i get calendar on my phone?",
+      "intent": "Calendar",
+      "entities": []
+    },
+    {
+      "text": "how do i get calendar on my samsung?",
+      "intent": "Calendar",
+      "entities": []
+    },
+    {
+      "text": "how do i get calendar on my windows phone?",
+      "intent": "Calendar",
+      "entities": []
+    },
+    {
+      "text": "how do i get it help",
+      "intent": "CreateTicket",
+      "entities": []
+    },
+    {
+      "text": "how do i get mail on my android phone?",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 13,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "how do i get mail on my galaxy?",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 13,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "how do i get mail on my iphone?",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 13,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "how do i get mail on my phone?",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 13,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "how do i get onedrive on my iphone?",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 13,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "how do i get onedrive on my phone?",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 13,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "how do i get onedrive on my samsung?",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 13,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "how do i get onedrive on my windows phone?",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 13,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "how do i get outlook on my android?",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 13,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "how do i get outlook on my galaxy?",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 13,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "how do i get outlook on my iphone?",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 13,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "how do i get outlook on my phone?",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 13,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "how do i get outlook on my samsung?",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 13,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "how do i get outlook on my windows phone?",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 13,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "how do i get started with onedrive?",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 26,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "how do i host content?",
+      "intent": "VideoStreams",
+      "entities": []
+    },
+    {
+      "text": "how do i join a group on stream?",
+      "intent": "VideoStreams",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 16,
+          "endPos": 20
+        },
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 25,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "how do i leave a group on stream?",
+      "intent": "VideoStreams",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 17,
+          "endPos": 21
+        },
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 26,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "how do i make a calendar event",
+      "intent": "Calendar",
+      "entities": []
+    },
+    {
+      "text": "how do i make a new shared mailbox for my boss",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 20,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "how do i make a personal dl",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 16,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "how do i manage access to smb?",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 26,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "how do i manage my distribution list?",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 19,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "how do i need members to an old distribution lists",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 32,
+          "endPos": 49
+        }
+      ]
+    },
+    {
+      "text": "how do i open",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how do i recover deleted and/or previous versions of files?",
+      "intent": "OneDrive",
+      "entities": []
+    },
+    {
+      "text": "how do i remove a member from a dl",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 32,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "how do i remove a users from a distribution list",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 31,
+          "endPos": 47
+        }
+      ]
+    },
+    {
+      "text": "how do i rename a shared mailbox?",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 18,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "how do i rename my group?",
+      "intent": "Groups",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 19,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "how do i request a distribution list?",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 19,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "how do i request a new smb?",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 23,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "how do i request access to these dls",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 33,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "how do i request ownership of a dl",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 32,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "how do i request ownership of an smb?",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 33,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "how do i request to be added from a distribution list?",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 36,
+          "endPos": 52
+        }
+      ]
+    },
+    {
+      "text": "how do i request to be added or removed from a share mailbox or calendar?",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 47,
+          "endPos": 59
+        },
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 64,
+          "endPos": 71
+        }
+      ]
+    },
+    {
+      "text": "how do i retire a shared mailbox?",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 18,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "how do i retire a smb?",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 18,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "how do i return a distribution list?",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 18,
+          "endPos": 34
+        }
+      ]
+    },
+    {
+      "text": "how do i save and send a draft?",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 25,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "how do i search for a room in outlook",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 30,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "how do i see how much space i have available in my individual onedrive?",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 62,
+          "endPos": 69
+        }
+      ]
+    },
+    {
+      "text": "how do i see my outlook contacts",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 16,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "how do i set permissions on a video?",
+      "intent": "VideoStreams",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 13,
+          "endPos": 23
+        },
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 30,
+          "endPos": 34
+        }
+      ]
+    },
+    {
+      "text": "how do i share my group",
+      "intent": "Groups",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 18,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "how do i share onedrive files?",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 15,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "how do i share stuff on onedrive",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 24,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "how do i sync a shared item?",
+      "intent": "OneDrive",
+      "entities": []
+    },
+    {
+      "text": "how do i synchronize onedrive files and folders to my local device?",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 21,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "how do i transfer dl ownership?",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 18,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "how do i transfer smb ownership to someone else",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 18,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "how do i turn off comments",
+      "intent": "VideoStreams",
+      "entities": []
+    },
+    {
+      "text": "how do i turn off view by conversation?",
+      "intent": "Outlook",
+      "entities": []
+    },
+    {
+      "text": "how do i upload a file to onedrive?",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 26,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "how do i upload a video on video",
+      "intent": "VideoStreams",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 18,
+          "endPos": 22
+        },
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 27,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "how do i upload a video to stream",
+      "intent": "VideoStreams",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 18,
+          "endPos": 22
+        },
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 27,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "how do i upload a video to streams",
+      "intent": "VideoStreams",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 18,
+          "endPos": 22
+        },
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 27,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "how do i upload a video?",
+      "intent": "VideoStreams",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 18,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "how do i view the distribution lists i belong to?",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 18,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "how do you do",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "how is bosotn",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how is it",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "how is it blue",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how is it going",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "how is it hanging",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "how many do you share",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many fingers am i holding up",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how many people does it take to train a bot",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how much can be stored?",
+      "intent": "OneDrive",
+      "entities": []
+    },
+    {
+      "text": "how much can i store on my onedrive",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 27,
+          "endPos": 34
+        }
+      ]
+    },
+    {
+      "text": "how much could a woodchuck could chuck wood chuck wood",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how to ge to my two drive",
+      "intent": "OneDrive",
+      "entities": []
+    },
+    {
+      "text": "how to get to my onedrive",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 17,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "how to go to my one drive",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 16,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "how to i create mail rules",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 16,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "how to i download one drive?",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 18,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "how to make a shared mailbox",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 14,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "howre things",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hows it",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "how's it",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hows it going",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "how's it going",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hullo",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "i ' d like to take dinner in a quiet restaurant in downtown",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Events.PlaceType",
+          "startPos": 37,
+          "endPos": 46
+        }
+      ]
+    },
+    {
+      "text": "i cant access my dl",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 17,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "i cant add my smb to my email",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 14,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "i can't see images or links in email messages.",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 31,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "i can't sync my email",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 16,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "i need a new shared mailbox",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 13,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "i need a ticket",
+      "intent": "CreateTicket",
+      "entities": []
+    },
+    {
+      "text": "i need access to my boss's mailbox",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 27,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "i need access to outlook",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 17,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "i need access to these distribution lists",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 23,
+          "endPos": 40
+        }
+      ]
+    },
+    {
+      "text": "i need access to these shared mailboxes to do my work",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 23,
+          "endPos": 38
+        }
+      ]
+    },
+    {
+      "text": "i need to change the owners and members of these distribution lists",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 49,
+          "endPos": 66
+        }
+      ]
+    },
+    {
+      "text": "i need to create a shared mailbox",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 19,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "i need to create a ticket",
+      "intent": "CreateTicket",
+      "entities": []
+    },
+    {
+      "text": "i need to create a ticket for a shared mailbox",
+      "intent": "CreateTicket",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 32,
+          "endPos": 45
+        }
+      ]
+    },
+    {
+      "text": "i need to edit my shared mailbox",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 18,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "i need to make a new distirbution list",
+      "intent": "DistributionList",
+      "entities": []
+    },
+    {
+      "text": "i need to rename these dls",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 23,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "i submitted a duplicate ticket by accident",
+      "intent": "CreateTicket",
+      "entities": []
+    },
+    {
+      "text": "i want a romantic restaurant for my newly married friends",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Events.PlaceType",
+          "startPos": 18,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "i want to be added to this distribution list",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 27,
+          "endPos": 43
+        }
+      ]
+    },
+    {
+      "text": "i want to drive away",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want to go to a cultural theatre tonight",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Events.PlaceType",
+          "startPos": 18,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "i want to join a group",
+      "intent": "Groups",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 17,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "i want to rename my smb",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 20,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "i want to rename these dls",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 23,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "i want to rename these shared mailboxes",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 23,
+          "endPos": 38
+        }
+      ]
+    },
+    {
+      "text": "i want to reschedule the meeting at the air force club",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Calendar.Subject",
+          "startPos": 25,
+          "endPos": 53
+        }
+      ]
+    },
+    {
+      "text": "i would like to create multiple groups",
+      "intent": "Groups",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 32,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "i'm having sync issues",
+      "intent": "Outlook",
+      "entities": []
+    },
+    {
+      "text": "i'm not receiving emails",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 18,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "invalid email",
+      "intent": "Outlook",
+      "entities": []
+    },
+    {
+      "text": "io",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "is it possible (and if so, how) to share a document in a group to external users?",
+      "intent": "Groups",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 57,
+          "endPos": 61
+        }
+      ]
+    },
+    {
+      "text": "is sensitive data allowed in onedrive?",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 29,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "is there a limit on the number of groups?",
+      "intent": "Groups",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 34,
+          "endPos": 39
+        }
+      ]
+    },
+    {
+      "text": "is there a onedrive mobile app?",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 11,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "is there a way to archive a group?",
+      "intent": "Groups",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 28,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "is there an ios app currently that performs the ability to sync office 365 groups files?",
+      "intent": "Groups",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 75,
+          "endPos": 80
+        }
+      ]
+    },
+    {
+      "text": "is there any way to enable external users that do not have an o365 account to join an o365 group?",
+      "intent": "Groups",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 91,
+          "endPos": 95
+        }
+      ]
+    },
+    {
+      "text": "is there any way to export the calendar in a group?",
+      "intent": "Groups",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 45,
+          "endPos": 49
+        }
+      ]
+    },
+    {
+      "text": "jo",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "jow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "let ' s book two tickets for the international library",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Events.PlaceType",
+          "startPos": 47,
+          "endPos": 53
+        }
+      ]
+    },
+    {
+      "text": "let's go eat tomorrow at noon",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "let's have a meeting tomorrow at lunch time at olive garden",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Calendar.Location",
+          "startPos": 47,
+          "endPos": 58
+        }
+      ]
+    },
+    {
+      "text": "lo",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "low",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "m",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "mail attachment not loading",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 0,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "mail isn't opening",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 0,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "mail still in outbox",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 0,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "mailbox isn't showing up on webmail",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 0,
+          "endPos": 6
+        },
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 28,
+          "endPos": 34
+        }
+      ]
+    },
+    {
+      "text": "make a ticket",
+      "intent": "CreateTicket",
+      "entities": []
+    },
+    {
+      "text": "make an event with andrew flaxman for tmrw afternoon at 9am please",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Calendar.Subject",
+          "startPos": 19,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "make an event with andrew flaxman for tomorrow morning at 9am please",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Calendar.Subject",
+          "startPos": 19,
+          "endPos": 32
+        }
+      ]
+    },
+    {
+      "text": "make an it ticket",
+      "intent": "CreateTicket",
+      "entities": []
+    },
+    {
+      "text": "make dinner plans at restaurant at 8pm .",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Calendar.Location",
+          "startPos": 21,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "make event 2/14 3pm \"meeting with ceo\"",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Calendar.Subject",
+          "startPos": 21,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "make event 2/15 3pm \"meeting with ceo\"",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Calendar.Subject",
+          "startPos": 21,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "make me a delegate for",
+      "intent": "Outlook",
+      "entities": []
+    },
+    {
+      "text": "make me a sammich",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make shared box",
+      "intent": "SharedMailbox",
+      "entities": []
+    },
+    {
+      "text": "mark all email messages as read",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 9,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "marketing meetings on tuesdays will now be every wednesday please change on my calendar",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Calendar.Subject",
+          "startPos": 0,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "meet kiel at hallmark cards 405 saturday 2 : 00 pm",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Calendar.Location",
+          "startPos": 13,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "meeting my manager",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Calendar.Subject",
+          "startPos": 0,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "morning",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "move the bbq party to friday",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Calendar.Subject",
+          "startPos": 9,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "my web view doesn't have the 'sync' link.",
+      "intent": "OneDrive",
+      "entities": []
+    },
+    {
+      "text": "new owner for smb",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 14,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "new owner of dl",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 13,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "new shared mailbox",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 4,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "new smb",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 4,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "obtaining access to one drive",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 20,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "off",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "oj",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "oj'",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "on",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "or",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "outlook app not working",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 0,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "outlook browser not working",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 0,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "outlook not loading",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 0,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "personal dl",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 0,
+          "endPos": 10
+        }
+      ]
+    },
+    {
+      "text": "pick up truck",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please just delete my meeting",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Calendar.Subject",
+          "startPos": 19,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "please read my latest text from james",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please read my recent emails",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 22,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "po",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "pol",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "qow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read last fujitsu ' s email",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read latest nokia email",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 18,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "read loud email",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 10,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "read miranda ' s text",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read mum ' s text",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read my most recent email",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 20,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "read my new text message",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read my unopened sms",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read new text messages",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read recent emails",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read text from mum",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read text from wife",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "read texts from kyla jack",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "recover the email",
+      "intent": "Outlook",
+      "entities": []
+    },
+    {
+      "text": "remove a member from a dl?",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 23,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "remove owner from dl",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 18,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "remove user from shared mailbox",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 17,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "removing member from a group",
+      "intent": "Groups",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 23,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "rename a channel?",
+      "intent": "VideoStreams",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 9,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "rename an uploaded video?",
+      "intent": "VideoStreams",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 19,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "rename distribution lists please",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 7,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "rename dl",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 7,
+          "endPos": 8
+        }
+      ]
+    },
+    {
+      "text": "rename shared mailbox",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 7,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "reply text",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "requesting ownership of my group",
+      "intent": "Groups",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 27,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "rules for mailboxes",
+      "intent": "Outlook",
+      "entities": []
+    },
+    {
+      "text": "s",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "salutations",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "save the date may 17 pictures party",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Calendar.Subject",
+          "startPos": 21,
+          "endPos": 34
+        }
+      ]
+    },
+    {
+      "text": "schedule \"wfh\" next friday",
+      "intent": "Calendar",
+      "entities": []
+    },
+    {
+      "text": "schedule appointment for tomorrow please",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Calendar.Subject",
+          "startPos": 9,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "search for meetings with chris",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Calendar.Subject",
+          "startPos": 11,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "set an event on edwardsville pa gym today",
+      "intent": "Calendar",
+      "entities": [
+        {
+          "entity": "Calendar.Location",
+          "startPos": 16,
+          "endPos": 34
+        }
+      ]
+    },
+    {
+      "text": "share stuff from onedrive",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 17,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "shared mailbox is giving me an error",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 0,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "smb not loading on outlook",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "smb not showing up on webmail",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "sojourn shared",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "some distribution",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "some of my emails are missing or disappearing. .",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 11,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "sow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "stuff",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "sup",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "t",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the workshop will last for 10 hours",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Calendar.Subject",
+          "startPos": 0,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "this afternoon",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "this evening",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "this person is no longer with biogen and i need to revoke their access to these distribution lists",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 80,
+          "endPos": 97
+        }
+      ]
+    },
+    {
+      "text": "this person is no longer with biogen and i need to revoke their access to these shared mailboxes",
+      "intent": "SharedMailbox",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 80,
+          "endPos": 95
+        }
+      ]
+    },
+    {
+      "text": "ticket plus",
+      "intent": "CreateTicket",
+      "entities": []
+    },
+    {
+      "text": "tow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "train a bot",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "turn off comments",
+      "intent": "VideoStreams",
+      "entities": []
+    },
+    {
+      "text": "turn off people",
+      "intent": "VideoStreams",
+      "entities": []
+    },
+    {
+      "text": "turn off the lights",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "turn on captions",
+      "intent": "VideoStreams",
+      "entities": []
+    },
+    {
+      "text": "turn on subtitles",
+      "intent": "VideoStreams",
+      "entities": []
+    },
+    {
+      "text": "uo",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "up",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "upload streams",
+      "intent": "VideoStreams",
+      "entities": []
+    },
+    {
+      "text": "vb",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "visit 209 nashville gym tomorrow morning",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Calendar.Location",
+          "startPos": 10,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "want to hear a joke",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "webmail not loading",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 0,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "what",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what are the keyboard shortcuts in the mail?",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 39,
+          "endPos": 42
+        }
+      ]
+    },
+    {
+      "text": "what are you doing",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what can i save to onedrive?",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 19,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "what characters are prohibited in file and folder names?",
+      "intent": "OneDrive",
+      "entities": []
+    },
+    {
+      "text": "what do i need to get started with mail",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 35,
+          "endPos": 38
+        }
+      ]
+    },
+    {
+      "text": "what do you do",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "what happens tomorrow morning",
+      "intent": "Calendar",
+      "entities": []
+    },
+    {
+      "text": "what is 1 drive",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 8,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "what is a distribution list",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 10,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "what is a dl",
+      "intent": "DistributionList",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 10,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "what is in my pocket",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is in the afternoon",
+      "intent": "Calendar",
+      "entities": []
+    },
+    {
+      "text": "what is in the evening",
+      "intent": "Calendar",
+      "entities": []
+    },
+    {
+      "text": "what is microsoft groups?",
+      "intent": "Groups",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 18,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "what is microsoft streams",
+      "intent": "VideoStreams",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 18,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "what is my watchlist",
+      "intent": "VideoStreams",
+      "entities": []
+    },
+    {
+      "text": "what is onedrive",
+      "intent": "OneDrive",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 8,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "what is strem",
+      "intent": "VideoStreams",
+      "entities": []
+    },
+    {
+      "text": "what is the difference between a public and private group?",
+      "intent": "Groups",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 52,
+          "endPos": 56
+        }
+      ]
+    },
+    {
+      "text": "what is the song of the day",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time is it",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "whats going on tomorrow morning",
+      "intent": "Calendar",
+      "entities": []
+    },
+    {
+      "text": "whats not",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what's the biggest file i can upload to video?",
+      "intent": "VideoStreams",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 40,
+          "endPos": 44
+        }
+      ]
+    },
+    {
+      "text": "what's the different between video and stream?",
+      "intent": "VideoStreams",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 29,
+          "endPos": 33
+        },
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 39,
+          "endPos": 44
+        }
+      ]
+    },
+    {
+      "text": "what's the different between webmail and outlook",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 29,
+          "endPos": 35
+        },
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 41,
+          "endPos": 47
+        }
+      ]
+    },
+    {
+      "text": "whats up",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "what's up",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "what's up with you",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "when should we use office 365 groups versus yammer?",
+      "intent": "Groups",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 30,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "where",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where are my contacts?",
+      "intent": "Outlook",
+      "entities": []
+    },
+    {
+      "text": "where are my email contacts",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 13,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "where are my email messages",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 13,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "where are you going",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "where do i have to be this afternoon",
+      "intent": "Calendar",
+      "entities": []
+    },
+    {
+      "text": "where i can find a quiet cafe for studying ?",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Events.PlaceType",
+          "startPos": 25,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "where is the address book",
+      "intent": "Outlook",
+      "entities": []
+    },
+    {
+      "text": "where is the office 365 groups data stored?",
+      "intent": "Groups",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 24,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "who'",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "why can’t i create office 365 groups using bulk import?",
+      "intent": "Groups",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 30,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "why can't i send an email",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 20,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "why do i get a (500) internal server error when i navigate to the office 365 groups page?",
+      "intent": "Groups",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 77,
+          "endPos": 82
+        }
+      ]
+    },
+    {
+      "text": "why do i get a retrieveofficesettings: 1 error when i navigate to the office 365 groups page?",
+      "intent": "Groups",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 81,
+          "endPos": 86
+        }
+      ]
+    },
+    {
+      "text": "why don’t i see all of my group's meetings in dynamics 365?",
+      "intent": "Groups",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 26,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "why isn't my email working",
+      "intent": "Outlook",
+      "entities": [
+        {
+          "entity": "ExchangeKeywords",
+          "startPos": 13,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "woke",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "worth it",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "wow",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "yesterday morning",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "yo",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "yoohoo",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "you are a bot",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "you da man",
+      "intent": "None",
+      "entities": []
+    }
+  ]
+}
