@@ -28,10 +28,10 @@ var bot = new builder.UniversalBot(connector)
 // var LuisModelUrl = "./biogen-helper-bot.json"
 // // set your LUIS url with LuisActionBinding models (see samples/LuisActionBinding/LUIS_MODEL.json)
 // var luisRecognizer = new builder.LuisRecognizer(LuisModelUrl);
-// var luisRecognizer = new builder.LuisRecognizer(process.env.LUIS_MODEL_URL);
+var luisRecognizer = new builder.LuisRecognizer(process.env.LUIS_MODEL_URL);
 
 
-// Make the recognizer For the QnA service to be used.
+// Establishes the QNA bot to be usable using the API keys provided.
 var qnaRecognizer = new cog.QnAMakerRecognizer({
     knowledgeBaseId: process.env.QAID,
     subscriptionKey: process.env.SUB_KEY
@@ -39,7 +39,7 @@ var qnaRecognizer = new cog.QnAMakerRecognizer({
 
 
 
-var intentsDialog = new builder.IntentDialog({ recognizers: [qnaRecognizer] });
+var intentsDialog = new builder.IntentDialog({ recognizers: [qnaRecognizer, luisRecognizer] });
 bot.dialog("/", intentsDialog)
 
 
@@ -48,8 +48,11 @@ intentsDialog.matches("qna", (session, args, next) => {
     var answerEntity = builder.EntityRecognizer.findEntity(args.entities, "answer");
     console.log(answerEntity);
     session.send(answerEntity.entity);
-
 })
+
+intentsDialog.matches("SharedMailbox", (session,args,next) =>{
+  session.send("Within the LUIS Shared Mailbox")
+} )
 
 
 
