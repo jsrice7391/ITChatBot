@@ -37,36 +37,32 @@ var qnaRecognizer = new cog.QnAMakerRecognizer({
     subscriptionKey: process.env.SUB_KEY
 })
 
+// This is the actual creation of the bot itself, with the recognizers that are beging given to it.
+var intentDialog = new builder.IntentDialog({ recognizers: [qnaRecognizer] });
+// Starts the actual dialog.
+bot.dialog("/", intentDialog)
 
-
-var intentsDialog = new builder.IntentDialog({ recognizers: [qnaRecognizer] });
-bot.dialog("/", intentsDialog)
-
-
-intentsDialog.matches("qna", (session, args, next) => {
-    console.log("INSIDE THE QNA")
-    var answerEntity = builder.EntityRecognizer.findEntity(args.entities, "answer");
-    console.log(answerEntity);
-    session.send(answerEntity.entity);
-})
-
-intentsDialog.matches("CreateTicket", (session,args,next) =>{
-  session.send("Within the LUIS Create Ticket")
-} )
-
-
-
-intentsDialog.onDefault([
+// Set the default dialog for the response.
+intentDialog.onDefault([
   function(session){
     session.send("Sorry I do not see anything in the prebuilt")
   }
-
 ]);
 
+// Sets The responses that would possibly match the QNA portion. 
+intentDialog.matches("qna", (session, args, next) => {
+    console.log("INSIDE THE QNA")
+    // Go through the builder EntryRecognizer method and find the entity with an answer
+    var answerEntity = builder.EntityRecognizer.findEntity(args.entities, "answer");
+    // The answerEntity variable throws back 3 parameters. A score = the certainrty of the processing. An entity, the answer and the type of eneity which we will look for the answer as state above. We then send the entity
+    session.send(answerEntity.entity);
+})
 
+var LuisActions = new cog.LuisActionBinding;
+// Import an array with Binding Actions
+var SampleActions = require("./SampleActions");
 
-
-
-
+// Finally, bind the actions to the bot and intentDialog, using the same URL from the LuisRecognizer
+LuisActions.bindToBotDialog(bot, intentDialog, luisRecognizer , SampleActions);
   
 
