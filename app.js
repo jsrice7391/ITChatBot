@@ -58,11 +58,11 @@ intentDialog.matches("qna", (session, args, next) => {
     session.send(answerEntity.entity);
 })
 
-var LuisActions = new cog.LuisActionBinding;
+// var LuisActions = new cog.LuisActionBinding;
 // Import an array with Binding Actions
 var SampleActions = require("./SampleActions");
 
 // Finally, bind the actions to the bot and intentDialog, using the same URL from the LuisRecognizer
-LuisActions.bindToBotDialog(bot, intentDialog, luisRecognizer , SampleActions);
+// LuisActions.bindToBotDialog(bot, intentDialog, luisRecognizer , SampleActions);
   
 
