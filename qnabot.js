@@ -1,105 +1,61 @@
-var restify = require('restify');
-var builder = require('botbuilder');
-var builder_cognitiveservices = require('botbuilder-cognitiveservices');
-var https = require('https');
+// This loads the environment variables from the .env file
+require("dotenv-extended").load();
+var builder = require("botbuilder");
+var restify = require("restify");
+var cog = require("botbuilder-cognitiveservices");
+var shared = require("./SampleActions/SharedMailbox");
 
 // Setup Restify Server
 var server = restify.createServer();
-server.listen(process.env.port || process.env.PORT || 3978, function(){
-    console.log('%s listening to %s', server.name, server.url);
+// The actual start of the server
+server.listen(process.env.port || process.env.PORT || 3978, function() {
+  console.log("%s listening to %s", server.name, server.url);
 });
-
-// Create chat connector instance
+// Create connector and listen for messages
 var connector = new builder.ChatConnector({
-    // appId: 'Your-Microsoft-App-ID', //process.env.MicrosoftAppId,
-    // appPassword: 'Your-Microsoft-App-Password', //    process.env.MicrosoftAppPassword,
+  // appId: process.env.MICROSOFT_APP_ID,
+  // appPassword: process.env.MICROSOFT_APP_PASSWORD
 });
 
-// Listen for messages from users
-server.post('/api/messages', connector.listen());
+// The HTTP route that we can listen on for the servers incoming requests
+server.post("/api/messages", connector.listen());
 
-// Bot instance, pass in the connector to receive messages from the user
+// We are establishing the Universal bot instance here. The bot will take an arguemnt of session.
 var bot = new builder.UniversalBot(connector);
 
-var recognizer = new builder_cognitiveservices.QnAMakerRecognizer({
-    knowledgeBaseId: process.env.QAID, // process.env.QnAKnowledgebaseId, 
-    subscriptionKey: process.env.SUB_KEY}); //process.env.QnASubscriptionKey});
+// Establish the LUIS connection through the API which is hiden
+// var LuisModelUrl = "./biogen-helper-bot.json"
+// // set your LUIS url with LuisActionBinding models (see samples/LuisActionBinding/LUIS_MODEL.json)
+// var luisRecognizer = new builder.LuisRecognizer(LuisModelUrl);
+var luisRecognizer = new builder.LuisRecognizer(process.env.LUIS_MODEL_URL);
 
-var basicQnAMakerDialog = new builder_cognitiveservices.QnAMakerDialog({
-recognizers: [recognizer],
-defaultMessage: 'No match! Try changing the query terms!',
-qnaThreshold: 0.3}
-);
+// Establishes the QNA bot to be usable using the API keys provided.
+var qnaRecognizer = new cog.QnAMakerRecognizer({
+  knowledgeBaseId: process.env.QAID,
+  subscriptionKey: process.env.SUB_KEY
+});
 
-// override
-basicQnAMakerDialog.respondFromQnAMakerResult = function(session, qnaMakerResult){
-    // Save the question
-    var question = session.message.text;
-    session.conversationData.userQuestion = question;
+// This is the actual creation of the bot itself, with the recognizers that are beging given to it.
+var intentDialog = new builder.IntentDialog({
+  recognizers: [qnaRecognizer, luisRecognizer]
+});
+// Starts the actual dialog.
+bot.dialog("/", intentDialog);
 
-    // boolean to check if the result is formatted for a card
-    var isCardFormat = qnaMakerResult.answers[0].answer.includes(';');
+// Set the default dialog for the response.
 
-    if(!isCardFormat){
-        // Not semi colon delimited, send a normal text response 
-        session.send(qnaMakerResult.answers[0].answer);
-    }else if(qnaMakerResult.answers && qnaMakerResult.score >= 0.5){
-        
-        var qnaAnswer = qnaMakerResult.answers[0].answer;
-        
-                var qnaAnswerData = qnaAnswer.split(';');
-                var title = qnaAnswerData[0];
-                var description = qnaAnswerData[1];
-                var url = qnaAnswerData[2];
-                var imageURL = qnaAnswerData[3];
-        
-                var msg = new builder.Message(session)
-                msg.attachments([
-                    new builder.HeroCard(session)
-                    .title(title)
-                    .subtitle(description)
-                    .images([builder.CardImage.create(session, imageURL)])
-                    .buttons([
-                        builder.CardAction.openUrl(session, url, "Learn More")
-                    ])
-                ]);
-        }
-    session.send(msg).endDialog();
-}
+intentDialog.matches("Greeting", (session, args, next) => {
+  session.send("Hello! Welcome to the Biogen chat bot!");
+});
 
-basicQnAMakerDialog.defaultWaitNextMessage = function(session, qnaMakerResult){
-    // saves the user's question
-    session.conversationData.userQuestion = session.message.text; 
-    
-    if(!qnaMakerResult.answers){
-        let msg = new builder.Message(session)
-        .addAttachment({
-            contentType: "application/vnd.microsoft.card.adaptive",
-            content: {
-                type: "AdaptiveCard",
-                body: [
-                    {
-                        "type": "TextBlock",
-                        "text": `${session.conversationData.userQuestion}`,
-                        "size": "large",
-                        "weight": "bolder",
-                        "color": "accent",
-                        "wrap": true
-                    },
-                    {
-                        "type": "TextBlock",
-                        "text": `Sorry, no answer found in QnA service`,
-                        "size": "large",
-                        "weight": "regular",
-                        "color": "dark",
-                        "wrap": true
-                    }
-                ]
-            }
-        });
-        session.send(msg);
-    }
-    session.endDialog();
-}
-
-bot.dialog('/', basicQnAMakerDialog);
+intentDialog.matches("ActiveDialog", (session, args, next) => {
+  console.log("INSIDE THE QNA");
+  // Go through the builder EntryRecognizer method and find the entity with an answer
+  console.log("here are the args: " + JSON.stringify(args));
+  var answerEntity = builder.EntityRecognizer.findEntity(
+    args.entities,
+    "answer"
+  );
+  // The answerEntity variable throws back 3 parameters. A score = the certainrty of the processing. An entity, the answer and the type of eneity which we will look for the answer as state above. We then send the entity
+  session.send(answerEntity.entity);
+});
