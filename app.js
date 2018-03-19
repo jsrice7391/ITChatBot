@@ -24,8 +24,11 @@ server.post('/api/messages', connector.listen());
 // We are establishing the Universal bot instance here. The bot will take an arguemnt of session.
 var bot = new builder.UniversalBot(connector)
 
+// Allow the libraries of Shop and address. Create Library allows the CLone method to be brought down to the sevrer and used
 bot.library(require("./dialogs/shop").createLibrary());
 bot.library(require("./dialogs/address").createLibrary());
+bot.library(require("./dialogs/ticket").createLibrary());
+
 
 
 
@@ -48,34 +51,21 @@ var intentDialog = new builder.IntentDialog({ recognizers: [luisRecognizer]});
 bot.dialog("/", intentDialog)
 
 // Set the default dialog for the response.
-
 intentDialog.matches("Greeting", (session, args, next)=>{
     session.send("Hello! Welcome to the Biogen chat bot!")
 })
 
-intentDialog.matches("ActiveDialog", (session, args, next) =>{
-    console.log("INSIDE THE QNA")
-    // Go through the builder EntryRecognizer method and find the entity with an answer
-    console.log("here are the args: " + JSON.stringify(args))
-    var answerEntity = builder.EntityRecognizer.findEntity(args.entities, "answer");
-     // The answerEntity variable throws back 3 parameters. A score = the certainrty of the processing. An entity, the answer and the type of eneity which we will look for the answer as state above. We then send the entity
-    session.send(answerEntity.entity);  
-});
-
-
 intentDialog.matches("CreateTicket", (session,arg, next)=>{
-    console.log(JSON.stringify(arg))
-    session.send("Inside the Create ticket")
+    session.beginDialog("ticket:/")
+
 });
 
 intentDialog.matches("SharedMailbox", (session,arg, next)=>{
+    // If it matches, begin the dialog for the "Shop"
      session.beginDialog("shop:/");
-
-
 });
 
 intentDialog.matches("Calendar", (session,arg, next)=>{
-    console.log("Hit the calendar")
     session.send(`Sure we can schedule a meeting for ${arg.entities.values[1].value}`)
 });
 
