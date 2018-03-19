@@ -1,8 +1,6 @@
 var builder = require("botbuilder");
 var locationDialog = require("botbuilder-location");
-
 var lib = new builder.Library("address");
-
 // Register BotBuilder-Location dialog
 lib.library(locationDialog.createLibrary(process.env.BING_MAPS_KEY));
 

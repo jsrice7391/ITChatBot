@@ -28,6 +28,8 @@ var bot = new builder.UniversalBot(connector)
 bot.library(require("./dialogs/shop").createLibrary());
 bot.library(require("./dialogs/address").createLibrary());
 bot.library(require("./dialogs/ticket").createLibrary());
+bot.library(require("./dialogs/calendar").createLibrary());
+
 
 
 
@@ -66,7 +68,7 @@ intentDialog.matches("SharedMailbox", (session,arg, next)=>{
 });
 
 intentDialog.matches("Calendar", (session,arg, next)=>{
-    session.send(`Sure we can schedule a meeting for ${arg.entities.values[1].value}`)
+    session.beginDialog("calendar:/")
 });
 
 
@@ -79,38 +81,7 @@ intentDialog.onDefault([
     }
 ]);
 
-bot.dialog("survey", [
-  function(session) {
-    builder.Prompts.text(session, "Hello... What's your name?");
-  },
-  function(session, results) {
-    session.userData.name = results.response;
-    builder.Prompts.number(
-      session,
-      "Hi " + results.response + ", How many years have you been coding?"
-    );
-  },
-  function(session, results) {
-    session.userData.coding = results.response;
-    builder.Prompts.choice(session, "What language do you code Node using? ", [
-      "JavaScript",
-      "CoffeeScript",
-      "TypeScript"
-    ]);
-  },
-  function(session, results) {
-    session.userData.language = results.response.entity;
-    session.endDialog(
-      "Got it... " +
-        session.userData.name +
-        " you've been programming for " +
-        session.userData.coding +
-        " years and use " +
-        session.userData.language +
-        "."
-    );
-  }
-]);
+
 
 
 module.exports = {
