@@ -29,26 +29,14 @@ bot.library(require("./dialogs/shop").createLibrary());
 bot.library(require("./dialogs/address").createLibrary());
 bot.library(require("./dialogs/ticket").createLibrary());
 bot.library(require("./dialogs/calendar").createLibrary());
-
-
-
+bot.library(require("./dialogs/sharedmb").createLibrary());
 
 
 // Establish the LUIS connection through the API which is hiden
-// var LuisModelUrl = "./biogen-helper-bot.json"
-// // set your LUIS url with LuisActionBinding models (see samples/LuisActionBinding/LUIS_MODEL.json)
-// var luisRecognizer = new builder.LuisRecognizer(LuisModelUrl);
 var luisRecognizer = new builder.LuisRecognizer(process.env.LUIS_MODEL_URL);
 
-
-// Establishes the QNA bot to be usable using the API keys provided.
-var qnaRecognizer = new cog.QnAMakerRecognizer({
-    knowledgeBaseId: process.env.QAID,
-    subscriptionKey: process.env.SUB_KEY
-})
-
 // This is the actual creation of the bot itself, with the recognizers that are beging given to it.
-var intentDialog = new builder.IntentDialog({ recognizers: [luisRecognizer]});
+var intentDialog = new builder.IntentDialog({recognizers: [luisRecognizer]});
 // Starts the actual dialog.
 bot.dialog("/", intentDialog)
 
@@ -64,7 +52,7 @@ intentDialog.matches("CreateTicket", (session,arg, next)=>{
 
 intentDialog.matches("SharedMailbox", (session,arg, next)=>{
     // If it matches, begin the dialog for the "Shop"
-     session.beginDialog("shop:/");
+     session.beginDialog("sharedMB:/");
 });
 
 intentDialog.matches("Calendar", (session,arg, next)=>{
@@ -72,16 +60,11 @@ intentDialog.matches("Calendar", (session,arg, next)=>{
 });
 
 
-// Finally, bind the actions to the bot and intentDialog, using the same URL from the LuisRecognizer
-// LuisActions.bindToBotDialog(bot, intentDialog, luisRecognizer , SampleActions);
-
 intentDialog.onDefault([
     function (session) {
         session.send("Sorry I do not see anything in the prebuilt")
     }
 ]);
-
-
 
 
 module.exports = {
