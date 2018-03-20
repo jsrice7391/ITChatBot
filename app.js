@@ -25,8 +25,6 @@ server.post('/api/messages', connector.listen());
 var bot = new builder.UniversalBot(connector)
 
 // Allow the libraries of Shop and address. Create Library allows the CLone method to be brought down to the sevrer and used
-bot.library(require("./dialogs/shop").createLibrary());
-bot.library(require("./dialogs/address").createLibrary());
 bot.library(require("./dialogs/ticket").createLibrary());
 bot.library(require("./dialogs/calendar").createLibrary());
 bot.library(require("./dialogs/sharedmb").createLibrary());

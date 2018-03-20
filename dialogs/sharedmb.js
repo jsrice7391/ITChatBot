@@ -4,8 +4,18 @@ const lib = new builder.Library("sharedMB");
 
 lib.dialog("/",[
     function(session){
-        session.send("Shared Mailboxes are a great way to keep one email is sent and the team who has access to that shared mailbox can manage that one email.");
-    }
+        const card = new builder.Message(session);
+        card.attachmentLayout(builder.AttachmentLayout.carousel);
+        card.attachments([
+            new builder.HeroCard(session)
+            .title("Shared Mailboxes")
+            .subtitle("This is where all of the QNA stuff is")
+            .text("Click here for some options")
+            .images([builder.CardImage.create(session, "https://s3.us-east-2.amazonaws.com/friend-finder333/question-mark.jpg")])
+            .buttons([builder.CardAction.imBack(session, "HERRO", "Go to QNA")])
+        ]);
+        session.send(card)
+    },
 ]);
 
 module.exports.createLibrary = () =>{
