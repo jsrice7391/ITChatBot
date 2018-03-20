@@ -10,12 +10,12 @@ lib.dialog("/",[
             new builder.HeroCard(session)
             .title("Shared Mailboxes")
             .subtitle("This is where all of the QNA stuff is")
-            .text("Click here for some options")
+            .text("Click here to go to the QnA page")
             .images([builder.CardImage.create(session, "https://s3.us-east-2.amazonaws.com/friend-finder333/question-mark.jpg")])
             .buttons([builder.CardAction.imBack(session, "HERRO", "Go to QNA")])
         ]);
         session.send(card)
-    },
+    }
 ]);
 
 module.exports.createLibrary = () =>{
