@@ -2,9 +2,12 @@
 Problem: When there are large companies with large IT departments, there becomes the need for the emplyoees to reach the proper people in the IT department who can get the problems solved fast. ITChatBot aims to use LUIS-AI to find the users intention and then direct them in the right direction and then use ServiceNow's API to create the documentation to the correct department.
 
 ## Technologies used
-LuisAI: https://www.luis.ai/
-ServiceNow API: https://developer.servicenow.com/app.do#!/rest_api_doc?v=jakarta&id=c_TableAPI
-Bot Emulator: https://docs.microsoft.com/en-us/azure/bot-service/bot-service-debug-emulator
+<ul>
+  
+<li>LuisAI: https://www.luis.ai/</li>
+<li>ServiceNow API: https://developer.servicenow.com/app.do#!/rest_api_doc?v=jakarta&id=c_TableAPI</li>
+<li>Bot Emulator: https://docs.microsoft.com/en-us/azure/bot-service/bot-service-debug-emulator</li>
+</ul>
 
 ## Use Azure app service editor
 
