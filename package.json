@@ -11,7 +11,7 @@
     "dotenv-extended": "^2.0.1",
     "restify": "^5.0.0",
     "schema-inspector": "^1.6.8",
-    "snyk": "^1.83.0"
+    "snyk": "^1.192.0"
   },
   "devDependencies": {
     "request": "^2.81.0",
@@ -20,7 +20,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect"
+    "prepare": "npm run snyk-protect",
+    "prepublish": "npm run snyk-protect"
   },
   "author": "",
   "license": "ISC",
