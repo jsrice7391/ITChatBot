@@ -11,7 +11,7 @@
     "dotenv-extended": "^2.0.1",
     "restify": "^5.0.0",
     "schema-inspector": "^1.6.8",
-    "snyk": "^1.83.0"
+    "snyk": "^1.234.0"
   },
   "devDependencies": {
     "request": "^2.81.0",
