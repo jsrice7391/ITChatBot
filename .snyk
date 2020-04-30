@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.12.0
+version: v1.14.1
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
@@ -20,3 +20,16 @@ patch:
         patched: '2018-06-21T06:49:26.836Z'
     - botbuilder-location > botbuilder > jsonwebtoken > joi > topo > hoek:
         patched: '2018-06-21T06:49:26.836Z'
+  SNYK-JS-LODASH-567746:
+    - botbuilder-cognitiveservices > lodash:
+        patched: '2020-04-30T21:54:26.847Z'
+    - restify > lodash:
+        patched: '2020-04-30T21:54:26.847Z'
+    - restify > restify-errors > lodash:
+        patched: '2020-04-30T21:54:26.847Z'
+    - botbuilder-location > request-promise > request-promise-core > lodash:
+        patched: '2020-04-30T21:54:26.847Z'
+    - botbuilder > botframework-connector > adal-node > async > lodash:
+        patched: '2020-04-30T21:54:26.847Z'
+    - botbuilder-azure > botbuilder > botframework-connector > adal-node > async > lodash:
+        patched: '2020-04-30T21:54:26.847Z'
